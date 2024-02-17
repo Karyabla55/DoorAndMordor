@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: efd9a5ac14698b14d9e08e93ace50cdd
+guid: 6e14339907b12b34b98bd46a5e1df9da
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -110,64 +110,106 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: HunterAttack_0
+      name: PlayerJump_Staffpng_0
       rect:
         serializedVersion: 2
-        x: 89
-        y: 17
-        width: 269
-        height: 495
-      alignment: 9
-      pivot: {x: 0.28, y: 0.5}
+        x: 54
+        y: 60
+        width: 170
+        height: 452
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c1407f5c0f3020840832e2519281ba18
-      internalID: -142322347
+      spriteID: eb8f44b5e4f712d4db5ca5579d23a9c8
+      internalID: 1019986088
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: HunterAttack_1
+      name: PlayerJump_Staffpng_1
       rect:
         serializedVersion: 2
-        x: 418
-        y: 17
-        width: 276
-        height: 495
-      alignment: 9
-      pivot: {x: 0.14, y: 0.5}
+        x: 348
+        y: 58
+        width: 172
+        height: 428
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cad021788114e80418f6266045c1b56e
-      internalID: 796612869
+      spriteID: 6eb60780552fe984e9f3fae94989e3d7
+      internalID: 1830206009
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: HunterAttack_2
+      name: PlayerJump_Staffpng_2
       rect:
         serializedVersion: 2
-        x: 815
-        y: 19
-        width: 558
-        height: 478
-      alignment: 9
-      pivot: {x: 0.17, y: 0.5}
+        x: 631
+        y: 60
+        width: 154
+        height: 318
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a3bcaacaac89b664b9b14a03b7756887
-      internalID: -713427044
+      spriteID: 88e7daddd89c1f2418e36ed31c9e79b1
+      internalID: -1872493215
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerJump_Staffpng_3
+      rect:
+        serializedVersion: 2
+        x: 920
+        y: 55
+        width: 184
+        height: 397
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 26e648d9a269556489ee1aa2199f62fd
+      internalID: 644191993
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerJump_Staffpng_4
+      rect:
+        serializedVersion: 2
+        x: 1186
+        y: 169
+        width: 210
+        height: 466
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 30cb3e4c3bedb234bb3d6f584c1c5f22
+      internalID: 1955723255
       vertices: []
       indices: 
       edges: []
@@ -183,9 +225,11 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      HunterAttack_0: -142322347
-      HunterAttack_1: 796612869
-      HunterAttack_2: -713427044
+      PlayerJump_Staffpng_0: 1019986088
+      PlayerJump_Staffpng_1: 1830206009
+      PlayerJump_Staffpng_2: -1872493215
+      PlayerJump_Staffpng_3: 644191993
+      PlayerJump_Staffpng_4: 1955723255
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

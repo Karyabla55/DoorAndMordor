@@ -11,10 +11,12 @@ public partial class PlayerMovement : MonoBehaviour
     [SerializeField] private float jumpForce = 10f;
     [SerializeField] private KeyCode sprintKey = KeyCode.LeftShift;
     
+
     public Animator animator;
-    
     public Weapon weapon;
-    private int Combo;
+
+    private bool Direction;
+    private int Combo = 0;
     private int index;
     private float currentSpeed;
     private float moveInput;
@@ -112,6 +114,7 @@ public partial class PlayerMovement : MonoBehaviour
                 animator.SetInteger("State", 2);
             }
             spriteRenderer.flipX = false;
+            Direction = false;
         }
         else if (moveInput < 0f && Input.GetKey(sprintKey))
         {
@@ -128,6 +131,7 @@ public partial class PlayerMovement : MonoBehaviour
                 animator.SetInteger("State", 2);
             }
             spriteRenderer.flipX = true;
+            Direction = true;
         }
         else if (moveInput > 0f)
         {
@@ -144,6 +148,7 @@ public partial class PlayerMovement : MonoBehaviour
                 animator.SetInteger("State", 1);
             }
             spriteRenderer.flipX = false;
+            Direction = false;
         }
         else if (moveInput < 0f)
         {
@@ -160,6 +165,7 @@ public partial class PlayerMovement : MonoBehaviour
                 animator.SetInteger("State", 1);
             }
             spriteRenderer.flipX = true;
+            Direction = true;
         }
         else if(index == 1)
         {
@@ -175,11 +181,34 @@ public partial class PlayerMovement : MonoBehaviour
         }
         if (rb.velocity.y > 0f)
         {
-            animator.SetInteger("State", 9);
+            if(index == 1)
+            {
+                animator.SetInteger("State", 14);
+            }
+            else if(index == 2)
+            {
+                animator.SetInteger("State", 16);
+            }
+            else
+            {
+                animator.SetInteger("State", 9);
+            }
+            
         }
         else if (rb.velocity.y < 0f)
         {
-            animator.SetInteger("State", 10);
+            if (index == 1)
+            {
+                animator.SetInteger("State", 15);
+            }
+            else if (index == 2)
+            {
+                animator.SetInteger("State", 17);
+            }
+            else
+            {
+                animator.SetInteger("State", 10);
+            }
         }
     }
 
@@ -191,8 +220,16 @@ public partial class PlayerMovement : MonoBehaviour
         }
         else if (index == 2)
         {
+            
             if(Combo%2 == 0)
-            animator.SetInteger("State", 12);
+            {
+                animator.SetInteger("State", 13);
+            }
+            else
+            {
+                animator.SetInteger("State", 12);
+            }
+            
         }
     }
 
@@ -211,5 +248,14 @@ public partial class PlayerMovement : MonoBehaviour
         {
             isGrounded = false;
         }
+    }
+    public bool GetDirection()
+    {
+        return Direction;
+    }
+    public void SetCombo(int combo)
+    {
+        Combo = Combo+ combo;
+        Debug.Log(combo);
     }
 }

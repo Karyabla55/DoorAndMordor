@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: cc73f0827e96d0b47b3ec164eb3e3a31
+guid: eac9a8d8ace02544f9529fcacf8f7c10
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -110,64 +110,106 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: PlayerAttack_Staff_0
+      name: PlayerJump_Sword_0
       rect:
         serializedVersion: 2
-        x: 56
-        y: 12
-        width: 203
-        height: 450
-      alignment: 9
-      pivot: {x: 0.44, y: 0.5}
+        x: 77
+        y: 60
+        width: 184
+        height: 452
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fb49eb94de5ed8f408edb942441524f4
-      internalID: 148355914
+      spriteID: 772e67e21abfd44489a468d03deaa782
+      internalID: -833944927
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PlayerAttack_Staff_1
+      name: PlayerJump_Sword_1
       rect:
         serializedVersion: 2
-        x: 392
-        y: 17
-        width: 241
-        height: 438
-      alignment: 9
-      pivot: {x: 0.3, y: 0.5}
+        x: 348
+        y: 58
+        width: 172
+        height: 467
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a9b4dfd5623e47244ba929e2baa21e32
-      internalID: -1687093701
+      spriteID: 240fc9d6e9162cf49819de160519c776
+      internalID: -1232576119
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PlayerAttack_Staff_2
+      name: PlayerJump_Sword_2
       rect:
         serializedVersion: 2
-        x: 775
-        y: 18
-        width: 334
-        height: 446
-      alignment: 9
-      pivot: {x: 0.23, y: 0.5}
+        x: 585
+        y: 60
+        width: 200
+        height: 302
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f9f4b6e62e6e8a447affbb71e6d82026
-      internalID: -1383429444
+      spriteID: 15f5c7c753a20344086548e398a3e65e
+      internalID: 1565284065
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerJump_Sword_3
+      rect:
+        serializedVersion: 2
+        x: 920
+        y: 55
+        width: 184
+        height: 427
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb584b7b786f0a94597b3ff8f058b151
+      internalID: 1451003506
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerJump_Sword_4
+      rect:
+        serializedVersion: 2
+        x: 1186
+        y: 169
+        width: 210
+        height: 472
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9a33b03bd349aaa418b95083e3c8dd0e
+      internalID: 2133020747
       vertices: []
       indices: 
       edges: []
@@ -183,9 +225,11 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      PlayerAttack_Staff_0: 148355914
-      PlayerAttack_Staff_1: -1687093701
-      PlayerAttack_Staff_2: -1383429444
+      PlayerJump_Sword_0: -833944927
+      PlayerJump_Sword_1: -1232576119
+      PlayerJump_Sword_2: 1565284065
+      PlayerJump_Sword_3: 1451003506
+      PlayerJump_Sword_4: 2133020747
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

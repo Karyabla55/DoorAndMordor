@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: cc73f0827e96d0b47b3ec164eb3e3a31
+guid: 5e00d58ed6f3f9f46a9e15a81b3a0517
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -110,64 +110,106 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: PlayerAttack_Staff_0
+      name: PlayerAttack_Sword_2-sheet_0
       rect:
         serializedVersion: 2
-        x: 56
-        y: 12
-        width: 203
-        height: 450
+        x: 801
+        y: 19
+        width: 274
+        height: 588
       alignment: 9
-      pivot: {x: 0.44, y: 0.5}
+      pivot: {x: 0.18, y: 0.4}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fb49eb94de5ed8f408edb942441524f4
-      internalID: 148355914
+      spriteID: 5f663396a80462340b126d9ee4a26b9f
+      internalID: -2004907251
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PlayerAttack_Staff_1
+      name: PlayerAttack_Sword_2-sheet_2
       rect:
         serializedVersion: 2
-        x: 392
+        x: 54
+        y: 14
+        width: 281
+        height: 593
+      alignment: 9
+      pivot: {x: 0.25, y: 0.4}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0618729ff6715c04bbe7b264cda874c3
+      internalID: -1255091772
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerAttack_Sword_2-sheet_3
+      rect:
+        serializedVersion: 2
+        x: 374
         y: 17
-        width: 241
-        height: 438
+        width: 351
+        height: 590
       alignment: 9
-      pivot: {x: 0.3, y: 0.5}
+      pivot: {x: 0.14, y: 0.4}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a9b4dfd5623e47244ba929e2baa21e32
-      internalID: -1687093701
+      spriteID: c97833e52a57c404fbf5712c47d6ec77
+      internalID: -923900351
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PlayerAttack_Staff_2
+      name: PlayerAttack_Sword_2-sheet_4
       rect:
         serializedVersion: 2
-        x: 775
-        y: 18
-        width: 334
-        height: 446
+        x: 1147
+        y: 20
+        width: 431
+        height: 587
       alignment: 9
-      pivot: {x: 0.23, y: 0.5}
+      pivot: {x: 0.11, y: 0.4}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f9f4b6e62e6e8a447affbb71e6d82026
-      internalID: -1383429444
+      spriteID: 3d38bbb3554a86a43943885b881214d2
+      internalID: -518452643
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerAttack_Sword_2-sheet_5
+      rect:
+        serializedVersion: 2
+        x: 1632
+        y: 5
+        width: 468
+        height: 602
+      alignment: 9
+      pivot: {x: 0.1, y: 0.4}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 45969b0aea56ddf44bb1025aff6ed5ea
+      internalID: -293876063
       vertices: []
       indices: 
       edges: []
@@ -183,9 +225,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      PlayerAttack_Staff_0: 148355914
-      PlayerAttack_Staff_1: -1687093701
-      PlayerAttack_Staff_2: -1383429444
+      PlayerAttack_Sword_2-sheet_0: -2004907251
+      PlayerAttack_Sword_2-sheet_1: 1013391007
+      PlayerAttack_Sword_2-sheet_2: -1255091772
+      PlayerAttack_Sword_2-sheet_3: -923900351
+      PlayerAttack_Sword_2-sheet_4: -518452643
+      PlayerAttack_Sword_2-sheet_5: -293876063
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

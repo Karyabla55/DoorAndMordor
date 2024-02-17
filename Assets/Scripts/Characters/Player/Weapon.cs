@@ -5,30 +5,52 @@ public class Weapon : MonoBehaviour
 {
     public GameObject[] weapons; // Kullanılabilir silahlar
     private int currentWeaponIndex = 0;
+    
     private bool IsAttack = false;
     private Rigidbody2D BulletRigidbody;
-    private Rigidbody2D PlayerRigidbody;
 
-
+    private bool Direction;
     public GameObject bulletPrefab; // Mermi prefab'ı
     public Transform firePoint; // Ateşleme noktası
     public float attackRange = 0.5f;
     public LayerMask enemyLayers;
+    public KeyCode ColorChangeKey;
 
     public Color[] bulletColors; // Renkli mermilerin renkleri
+    private Color BulletColor;
+    private int currentColorIndex = 0;
     
 
-    private void Start()
-    {
-        PlayerRigidbody = GetComponent<Rigidbody2D>();
-    }
     void Update()
     {
+        Direction = gameObject.GetComponent<PlayerMovement>().GetDirection();
+        if ( Direction == true && currentWeaponIndex ==2)
+        {
+            firePoint.localPosition = new Vector2(-1.5f, 1);
+        }
+        else if ( Direction == false && currentWeaponIndex == 2)
+        {
+            firePoint.localPosition = new Vector2(1.5f, 1);
+        }
+        else if( Direction == true && currentWeaponIndex == 1)
+        {
+            firePoint.localPosition = new Vector2(-1.85f, 1.45f);
+        }
+        else
+        {
+            firePoint.localPosition = new Vector2(1.85f, 1.45f);
+        }
+
         // Silah değiştirme mekanizması
         float scroll = Input.GetAxis("Mouse ScrollWheel");
         if (scroll != 0)
         {
             ChangeWeapon(scroll);
+        }
+
+        if (Input.GetKey(ColorChangeKey))
+        {
+            ChangeColor();
         }
 
         // Silah ateşleme mekanizması
@@ -40,11 +62,19 @@ public class Weapon : MonoBehaviour
     }
 
     
-
+    void ChangeColor()
+    {
+        if(currentColorIndex >= bulletColors.Length)
+        {
+            currentColorIndex = 0;
+        }
+        BulletColor = bulletColors[currentColorIndex];
+        currentColorIndex++;
+        Debug.Log(BulletColor);
+    }
     void ChangeWeapon(float scroll)
     {
-         // Eski silahı devre dışı bırak
-    //weapons[currentWeaponIndex].SetActive(false);
+
     weapons[currentWeaponIndex].tag = "Untagged"; // Önceki silahın tag'ini temizle
 
     // Scroll yönüne göre yeni silahın index'ini belirle
@@ -57,8 +87,7 @@ public class Weapon : MonoBehaviour
         currentWeaponIndex = (currentWeaponIndex - 1 + weapons.Length) % weapons.Length;
     }
 
-    // Yeni silahı etkinleştir ve SelectedWeapon tag'ini ata
-    //weapons[currentWeaponIndex].SetActive(true);
+
     weapons[currentWeaponIndex].tag = "SelectedWeapon";
     }
 
@@ -69,9 +98,10 @@ public class Weapon : MonoBehaviour
         GameObject selectedWeapon = weapons[currentWeaponIndex];
         if (currentWeaponIndex !=0)
         {
+            
             if (selectedWeapon.CompareTag("SelectedWeapon"))
             {
-                Color bulletColor = bulletColors[currentWeaponIndex];
+                
                 switch (currentWeaponIndex)
                 {
                     case 0:
@@ -82,14 +112,17 @@ public class Weapon : MonoBehaviour
                         //saldırı animasyonu için süre
                         StartCoroutine(SetAttackFalse());
                         // Mermi oluşturma
-                        StartCoroutine(MakeBullet(bulletColor));
+                        StartCoroutine(MakeBullet(BulletColor));
                         break; 
                     case 2:
-                        Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(firePoint.position, attackRange, enemyLayers);                      
-                        foreach(Collider2D enemy in hitEnemies)
+                        StartCoroutine(SetAttackFalse());
+                        Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(firePoint.position, attackRange, enemyLayers);
+                        gameObject.GetComponent<PlayerMovement>().SetCombo(1);
+                        foreach (Collider2D enemy in hitEnemies)
                         {
-                            enemy.GetComponent<Hunter>().TakeDamage(bulletColor);
+                            StartCoroutine(Attack(enemy));
                         }
+                        
                         StartCoroutine(SetAttackFalse());
                         break;
                 }
@@ -106,7 +139,12 @@ public class Weapon : MonoBehaviour
         
     }
 
-
+    private IEnumerator Attack(Collider2D enemy)
+    {
+        yield return new WaitForSeconds(1);
+        enemy.GetComponent<Hunter>().TakeDamage(BulletColor);
+        
+    }
     private IEnumerator MakeBullet(Color BulletColor)
     {
         yield return new WaitForSeconds(0.6f);
@@ -114,17 +152,15 @@ public class Weapon : MonoBehaviour
         bullet.GetComponent<SpriteRenderer>().color = BulletColor;
         bullet.SetActive(true);
         BulletRigidbody = bullet.GetComponent<Rigidbody2D>();
-        if (PlayerRigidbody.velocity.x > 0f)
+        if (Direction)
         {
-            firePoint.position = new Vector2(1.5f,1);
-            BulletRigidbody.velocity = new Vector2(15, 2);
-        }
-        else if(PlayerRigidbody.velocity.x < 0f)
-        {
-            firePoint.position = new Vector2(-1.5f, 0);
             BulletRigidbody.velocity = new Vector2(-15, 2);
         }
-        else { firePoint.position = new Vector2(0,0);}
+        else
+        {
+            BulletRigidbody.velocity = new Vector2(15, 2);
+        }
+        Destroy(bullet,2f);
         
     }
 
