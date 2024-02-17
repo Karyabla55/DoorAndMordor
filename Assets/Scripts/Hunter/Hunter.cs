@@ -4,10 +4,15 @@ using UnityEngine;
 
 public class Hunter : MonoBehaviour
 {
+    public GameObject hunter;
+    public Transform AttackPoint;
+    public LayerMask PlayerLayer;
+
     private Color OwnColor;
-    private Rigidbody2D rb;
+    private Rigidbody2D rbPlayer;
     private Transform player;
-    
+    private Rigidbody2D rbHunter;
+
     public float moveSpeed = 5f; // Düþman hareket hýzý
     public float attackRange = 3f; // Saldýrý menzili
     public float attackCooldown = 2f; // Saldýrý aralýðý
@@ -15,32 +20,25 @@ public class Hunter : MonoBehaviour
 
     void Start()
     {
-        OwnColor = GetComponent<SpriteRenderer>().color;
-        rb = GetComponent<Rigidbody2D>(); // Düþmanýn Rigidbody bileþenini al
+        OwnColor = hunter.GetComponent<SpriteRenderer>().color;
+        rbPlayer = GetComponent<Rigidbody2D>(); // Düþmanýn Rigidbody bileþenini al
+        rbHunter = GetComponent<Rigidbody2D>(); 
         player = GameObject.FindGameObjectWithTag("Player").transform; // Oyuncunun pozisyonunu al
     }
 
     void Update()
     {
-        Move(); // Düþmaný hareket ettir
         Attack(); // Saldýrý gerçekleþtir
     }
 
-    void Move()
-    {
-        // Düþmaný oyuncuya doðru hareket ettir
-        Vector2 direction = (player.position - transform.position).normalized;
-        rb.velocity = direction * moveSpeed;
-    }
 
     void Attack()
     {
         // Oyuncu saldýrý menziline girdiyse ve saldýrý aralýðýna ulaþýldýysa
-        if (Vector2.Distance(transform.position, player.position) <= attackRange && Time.time >= attackTimer)
+        if (Vector2.Distance(rbPlayer.velocity, player.position) <= attackRange && Time.time >= attackTimer)
         {
-            // Saldýrý gerçekleþtir
-            Debug.Log("Oyuncuya saldýrý gerçekleþti!");
-            // Saldýrý aralýðýný yeniden hesapla
+            Collider2D hitPlayer = Physics2D.OverlapCircle(AttackPoint.position, attackRange, PlayerLayer);
+            hitPlayer.GetComponent<Player>().TakeDamege();
             attackTimer = Time.time + attackCooldown;
         }
     }
