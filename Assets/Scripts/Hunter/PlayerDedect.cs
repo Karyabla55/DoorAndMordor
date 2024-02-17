@@ -13,7 +13,7 @@ public class PlayerDedect : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            rb
+            Hunter.velocity = new Vector2();
         }
     }
 }

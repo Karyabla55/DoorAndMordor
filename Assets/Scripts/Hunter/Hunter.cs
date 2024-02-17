@@ -22,16 +22,23 @@ public class Hunter : MonoBehaviour
     {
         OwnColor = hunter.GetComponent<SpriteRenderer>().color;
         rbPlayer = GetComponent<Rigidbody2D>(); // Düþmanýn Rigidbody bileþenini al
-        rbHunter = GetComponent<Rigidbody2D>(); 
+        rbHunter = GetComponent<Rigidbody2D>();
+        rbHunter.gravityScale = 1;
         player = GameObject.FindGameObjectWithTag("Player").transform; // Oyuncunun pozisyonunu al
     }
 
     void Update()
     {
+        Move(); // Düþmaný hareket ettir
         Attack(); // Saldýrý gerçekleþtir
     }
 
+    void Move()
+    {
+        Vector2 direction = (player.position - transform.position).normalized;
+        rbHunter.velocity = new Vector2(direction.x * moveSpeed, rbHunter.velocity.y);
 
+    }
     void Attack()
     {
         // Oyuncu saldýrý menziline girdiyse ve saldýrý aralýðýna ulaþýldýysa
@@ -40,6 +47,7 @@ public class Hunter : MonoBehaviour
             Collider2D hitPlayer = Physics2D.OverlapCircle(AttackPoint.position, attackRange, PlayerLayer);
             hitPlayer.GetComponent<Player>().TakeDamege();
             attackTimer = Time.time + attackCooldown;
+            
         }
     }
 
